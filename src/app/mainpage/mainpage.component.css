@@ -1,0 +1,37 @@
+.scroll-container {
+    /*scroll-snap-type: y mandatory;*/
+    scroll-behavior: smooth;
+}
+
+.scroll-item {
+    /*scroll-snap-align: start;*/
+}
+
+.navigation-container {
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.navigation {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 20vw;
+}
+
+.navigation-item {
+    height: 30px;
+    width: 30px;
+    margin: 30px;
+    border-radius: 50%;
+    background-color: #3f51b5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

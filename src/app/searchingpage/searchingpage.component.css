@@ -1,0 +1,16 @@
+.form-control-custom {
+    background-color: transparent;
+    border-bottom: 3px solid #9900FF;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0%;
+}
+
+.btn-custom {
+    background-color: #9900FF;
+}
+
+.custom-fonts {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
