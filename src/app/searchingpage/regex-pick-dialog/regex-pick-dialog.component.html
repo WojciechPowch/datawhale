@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Dodaj wyrażenie REGEX</h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+      <input matInput 
+            placeholder="Nazwa" 
+            [(ngModel)]="data.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput 
+            placeholder="Wyrażenie" 
+            [(ngModel)]="data.query">
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button
+          (click)="cancelClick()">
+          Anuluj
+  </button>
+
+  <button *ngIf="acceptMode"
+          mat-button 
+          cdkFocusInitial
+          [mat-dialog-close]="data">
+          Dodaj
+  </button>
+</div>

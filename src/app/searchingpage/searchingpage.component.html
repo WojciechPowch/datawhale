@@ -1,30 +1,37 @@
-<!--<div class="container custom-fonts">
-  <div class="jumbotron text-center" style="border-radius: 0%;">
-    <h3>Witamy w data-miner</h3>
-  </div>
-  <form>
-    <div class="form-group">
-          <label>Wprowadź zapytanie: </label>
-          <input class="form-control form-control-custom"
-          [(ngModel)]="query" name="askingPart">
-          <br>
-          <button type="submit" class="btn btn-primary btn-block"
-          (click)="onSearchButtonClick(query)">Wyszukaj</button>
-    </div>
-  </form>
-</div>-->
+<div class="main-panel">
+  <div class="sub-container">
+    <div class="controls-container">
 
-<div style="height: 90vh; width: 100vw; overflow-x: hidden; display: flex; align-items: center; justify-content: center;">
-  <div style="width: 50vw; height: 90vh;">
-    <div style="width: 100%; height: 50%;">
-      <div style="width: 100%; height: 50%; display: flex; align-items: center; justify-content: center;">
-        <mat-form-field style="width: 100%;">
+      <div class="tools-panel">
+          <button (click)="openRegexPickDialog()"
+            mat-button>
+            Dodaj własny REGEX
+          </button>
+      </div>
+
+      <div class="main-input-container">
+        <mat-form-field class="custom-form-field"
+          appearance="outline">
           <input [(ngModel)]="query" matInput placeholder="Wprowadź zapytanie...">
         </mat-form-field>
       </div>
-      <div style="width: 100%; height: 10%; display: flex; align-items: flex-end; justify-content: flex-end;">
+
+      <div class="regex-container"
+        [ngStyle]="{ 'height' : regexList.length > 0 ? '10%' : '0' }">
+        <div *ngFor="let regex of regexList">
+          <app-regex-unit
+            [appRegexClick]="regex"
+            [data]="regex">
+          </app-regex-unit>
+        </div>
+      </div>
+
+      <div class="buttons-contaner">
+
         <button (click)="onSearchButtonClick(query)"
-          mat-button>Wyszukaj</button>
+          color="primary"
+          mat-raised-button>Wyszukaj</button>
+
       </div>
     </div>
   </div>

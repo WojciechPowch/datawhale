@@ -14,9 +14,13 @@ import { MatButtonModule,
         MatFormFieldModule,
         MatInputModule,
         MatToolbarModule,
-        MatToolbarRow } from '@angular/material';
+        MatToolbarRow,
+        MatDialogModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisrationPageComponent } from './regisration-page/regisration-page.component';
+import { RegexPickDialogComponent } from './searchingpage/regex-pick-dialog/regex-pick-dialog.component';
+import { RegexUnitComponent } from './searchingpage/regex-unit/regex-unit.component';
+import { RegexClickDirective } from './searchingpage/regex-click.directive';
 
 
 const appRoutes: Routes = [
@@ -33,7 +37,10 @@ const appRoutes: Routes = [
     SearchingpageComponent,
     MainpageComponent,
     LoginpageComponent,
-    RegisrationPageComponent
+    RegisrationPageComponent,
+    RegexPickDialogComponent,
+    RegexUnitComponent,
+    RegexClickDirective
   ],
   imports: [
     BrowserModule,
@@ -49,9 +56,13 @@ const appRoutes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    MatDialogModule,
     RouterModule.forRoot (
       appRoutes
     )
+  ],
+  entryComponents: [
+    RegexPickDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
